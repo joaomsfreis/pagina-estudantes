@@ -1,27 +1,22 @@
-# Evolucional
+# Angular 8 - Página Estudantes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+## Objetivo
 
-## Development server
+Desenvolver da minha primeira página usando Angular, que tem o objetivo gerenciar os alunos de uma escola. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Desenvolvimento
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+O projeto foi desenvolvido utilizando o **_Angular 8_**. Para tratar as dependências foi utilizado o **_Node.js_**, **ele está sendo executada na porta 4200**. As dependências utilizadas e suas versões estão especificadas no arquivo **_package.json_**.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Para instalar as dependências e executar o projeto, além de abrir o terminal no diretório do projeto, é necessário ter o **_npm_** instalados no computador.
 
-## Running unit tests
+### Com o npm instalado
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Deve-se executar os seguintes comandos no terminal:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+> npm i
+> npm serve --open
+```

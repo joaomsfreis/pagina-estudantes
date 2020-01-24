@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="row" >
+    <div class="col-2"></div>
+    <div class="col-8">
+      <canvas id="canvas"></canvas>
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+  <div class="button">
+    <button class="btn btn-primary main" (click)="addNewStudents()" ><fa class="main" name="user-plus"></fa>
+    Adicionar +300</button>
+    <button class="btn btn-success main" (click)="mountStudents(students)" ><fa class="main" name="search"></fa>Buscar estudantes</button>
+
+    <form id="table">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <select id="degree" class="form-control" (input)="this.degreeId = $event.target.value">
+              <option value={{0}}>Todos os períodos...</option>
+              <option *ngFor="let degree of degrees" value={{degree.id}}>{{degree.name}}</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <select id="class" class="form-control" (input)="this.classId = $event.target.value">
+              <option value={{0}}>Todas as classes...</option>
+              <option *ngFor="let classe of classes" value={{classe.id}}>{{classe.name}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="filterStudents()" >Filtrar</button>
+          </div>
+        </div>
+      </form>
+
+    <div  *ngIf="edit" class="border border-primary bg-light popup">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="id">Id</label>
+            <input type="text" class="form-control" id="id" value={{student.id}} (input)="this.student.id = $event.target.value"  readonly>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="ra">RA</label>
+            <input type="text" class="form-control" id="ra" value={{student.ra}} (input)="this.student.ra = $event.target.value" readonly>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" class="form-control" id="name" (input)="this.student.name = $event.target.value" value={{student.name}}>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-8">
+            <label for="degree">Período</label>
+            <select id="degree" class="form-control" (input)="this.student.degreeId = $event.target.value">
+            <option *ngFor="let degree of degrees" value={{degree.id}}>{{degree.name}}</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="class">Classe</label>
+            <select id="class" class="form-control" (input)="this.student.classId = $event.target.value">
+              <option *ngFor="let classe of classes" value={{classe.id}}>{{classe.name}}</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary col-md-4 form" (click)="editStudent()" >Confirmar</button>
+        <button type="button" class="btn btn-danger col-md-4 form" (click)="cancelEdit()" >Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Ra</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Período</th>
+        <th scope="col">Classe</th>
+        <th scope="col">Editar</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let student of studentsView" >
+      <tr>
+        <th scope="row">{{student.id}}</th>
+        <td>{{student.ra}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.degreeId.name}}</td>
+        <td>{{student.classId.name}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="startEditStudent(student)"><fa name="edit"></fa></button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
