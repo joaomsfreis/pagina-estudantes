@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Desenvolver da minha primeira página usando Angular, que tem o objetivo gerenciar os alunos de uma escola. 
+Desenvolvimento da minha primeira página usando Angular, que tem o objetivo de gerenciar os alunos de uma escola. 
 
 ## Desenvolvimento
 
